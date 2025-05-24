@@ -22,7 +22,7 @@ from typing import Union, Dict
 API_URL = "https://api.deepseek.com/v1/chat/completions"  # DeepSeek API 的 URL
 LOG_FILENAME = "deepseek_dashboard.log"  # 日志文件名
 MAX_CONTEXT_MESSAGES = 8  # 最大上下文消息数
-MAX_FILE_CONTENT = 10000  # 读取文件内容的最大字符数
+MAX_FILE_CONTENT = 1000  # 读取文件内容的最大字符数
 
 # 日志配置
 def configure_logging():
@@ -142,7 +142,17 @@ if __name__ == "__main__":
 
     # 示例 DeepSeek API 请求
     api_key = "sk-d49eaad9e4694df4a44462f7043496f9"  # 请替换为您的实际 API 密钥
-    system_prompt = "你是一个专家级 AI 助手，请提供详细且准确的回答。"
+    system_prompt = """
+        你是一个学术论文助手，用户会提供一篇文章的基本信息。请你根据这些信息判断文章是否与生态学研究相关，并且推断文章的类型（例如：研究性论文article、综述review、新闻news或者其他other）。
+        如果文章与生态学研究相关，请返回“True”，否则返回“False”。以JSON格式输出英文。
+        输出示例:
+        标题: "Are groundbreaking science discoveries becoming harder to find?",作者: [{"name": "David Matthews"}],摘要: "<p>Nature, Published online: 21 May 2025; <a href=\"https://www.nature.com/articles/d41586-025-01548-4\">doi:10.1038/d41586-025-01548-4</a></p>Researchers are arguing over whether ‘disruptive’ or ‘novel’ science is waning – and how to remedy the problem.".
+        输出示例: 
+        {
+        "is_related": False,
+        "type": "other"
+        }
+        """
     user_prompt = "我会提供文件pdf给你，请你根据文件内容提炼出每个文件的核心内容"
 
     full_prompt = f"{user_prompt}\n{extracted_content}"  # 将提取的内容与用户提示结合

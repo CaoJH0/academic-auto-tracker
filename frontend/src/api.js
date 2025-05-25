@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8000'; // FastAPI 后端地址
+const API_URL = 'http://47.98.142.70:8000'; // FastAPI 后端地址
 
 export const fetchPapers = async () => {
     try {

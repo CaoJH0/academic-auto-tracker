@@ -10,7 +10,7 @@ const FetchPapersButton = () => {
         setError(null);
 
         try {
-            const res = await fetch('http://127.0.0.1:8000/fetch_papers', {
+            const res = await fetch('http://47.98.142.70:8000/fetch_papers', {
                 method: 'POST', // 设置 HTTP 方法为 POST
                 headers: {
                     'Content-Type': 'application/json', // 根据需求设置适当的请求头

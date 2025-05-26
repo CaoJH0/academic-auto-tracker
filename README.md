@@ -5,7 +5,7 @@
 - [x] 订阅Nature的RSS
 - [x] 调用Deepseek API识别论文与‘我的兴趣’是否相关 -> 需要在[backend/app/main.py](backend/app/main.py)中个性化定义SYSTEM_prompt
 - [x] 下载感兴趣的PDF文件（目前仅适配Nature期刊论文）
-- [x] 将论文原文发送给Deekseek，返回4点核心内容
+- [x] 将论文原文发送给Deepseek，返回4点核心内容
 - [x] 基于论文原文的简单问答（仅后端）
 - [ ] 将设置“我的兴趣”prompt移到前端
 - [ ] 扩展RSS来源，或使用semantic scholar的API

@@ -11,7 +11,8 @@ const PaperList = () => {
         const getPapers = async () => {
             try {
                 const data = await fetchPapers();
-                setPapers(data);
+		const filteredPapers = data.filter(paper => !paper.key_info || !paper.key_info.error);
+                setPapers(filteredPapers);
             } catch (err) {
                 setError(err.message);
             } finally {

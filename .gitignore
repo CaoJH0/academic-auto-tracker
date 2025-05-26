@@ -1,3 +1,6 @@
+# ignore downloaded filed in backend
+backend/downloaded_pdfs/*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

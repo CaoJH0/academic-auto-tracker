@@ -23,9 +23,9 @@ const PaperItem = ({ paper }) => {
                     <h6 className="mt-3">Key Information:</h6>
                     <ul className="list-unstyled">
                         <li>1. {paper.key_info.key_info_1}</li>
-	                <li>2. {paper.key_info.key_info_2}</li>
-	                <li>3. {paper.key_info.key_info_3}</li>
-	                <li>4. {paper.key_info.key_info_4}</li>
+                        <li>2. {paper.key_info.key_info_2}</li>
+                        <li>3. {paper.key_info.key_info_3}</li>
+                        <li>4. {paper.key_info.key_info_4}</li>
                     </ul>
                 </div>
                 <div className="card-footer">
